@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({//this is for level 2 and this Schema it
   password: String
 });
 
-// const secret = "Thisisourlittlesecret.";// we cut it and post in .env file and there for mat it for .env format
+// const secret = "Thisisourlittlesecret.";// we cut it and post in .env file and there for mat it for .env formate
 userSchema.plugin(encrypt,{secret:process.env.SECRET  ,encryptedFields: ["password"]});
 
 const User = mongoose.model("User", userSchema);
